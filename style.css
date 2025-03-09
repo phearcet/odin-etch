@@ -9,3 +9,10 @@
   padding: 16px;
   gap: 5px;
 }
+
+#btn {
+  background-color: darkgray;
+  border: solid 2px;
+  border-radius: 5px;
+}
+
