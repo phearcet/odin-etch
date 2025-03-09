@@ -1,0 +1,11 @@
+#container {
+  height: 395px;
+  width: 395px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 16px;
+  gap: 5px;
+}
