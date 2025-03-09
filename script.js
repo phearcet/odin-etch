@@ -5,12 +5,12 @@ for (let i = 0; i < 256; i++) {
   
   div.style.width = "20px";
   div.style.height = "20px";
-  div.style.backgroundColor = "lightgrey";
-  div.onmouseenter = mouseHover;
+  div.style.backgroundColor = "white";
+  div.style.border = "solid 1px";
+  div.onmouseenter = (Event) => {
+    div.style.backgroundColor = "darkgrey";
+  } ;
+  
   container.appendChild(div);
 }
 
-function mouseHover() {
-  div.style.backgroundColor = "darkgrey";
-  
-}
