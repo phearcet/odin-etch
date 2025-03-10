@@ -1,13 +1,11 @@
 #container {
-  height: 427px;
-  width: 427px;
+  height: 600px;
+  width: 600px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 16px;
-  gap: 5px;
+  flex-direction: column;
+  padding: 0;
+  margin: auto;
+  align-content: center;
 }
 
 #btn {
@@ -16,6 +14,14 @@
   border-radius: 5px;
 }
 
-/* .grid {
-  flex: auto;
-} */
+.row {
+  display: flex;
+  flex: 1 1 auto;
+  height: 600px;
+}
+
+.gridItem {
+  flex: 1 1 auto;
+  border: 1px solid black;
+  width: 600px;
+}

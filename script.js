@@ -11,33 +11,35 @@ resBtn.addEventListener('click',() => {
   container.innerHTML = '';
   drawDiv(resolution);
 });
+
+const row = document.createElement("div");
+row.classList.add("row");
+
+const gridItem = document.createElement("div");
+gridItem.classList.add("gridItem");
+
 function drawDiv(resolution){
-  for (let i = 0; i < resolution; i++) {
+  let i = 1;
+  while (i <= resolution) {
+    container.appendChild(row.cloneNode(true));
+    i++;
+  }
 
-    let row = document.createElement("div");
-    row.classList.add("grid");
-
-    for(let i = 0; i < resolution; i++){
-
-      const div = document.createElement("div");
-      div.classList.add("grid");
-      div.style.width = "20px";
-      div.style.height = "20px";
-      
-      div.style.backgroundColor = "white";
-      div.style.border = "solid 1px";
-      div.onmouseenter = (Event) => {
-        div.style.backgroundColor = "darkgrey";
-    } ;
-
-      row.appendChild(div);
+  let rows = Array.from(container.querySelectorAll("div"));
+  rows.forEach(node => {
+    let i = 1;
+    while (i <= resolution) {
+      node.appendChild(gridItem.cloneNode(true));
+      i++;
     }
-  row.style.display = "flex";
+  });
 
+  container.addEventListener("mouseover", (e) => {
+    if (e.target.classList.contains("gridItem")) {
+      e.target.style.backgroundColor = "darkgrey";
+    }
+  })
+}
 
-    
-  container.appendChild(row);
-}
-}
 
 drawDiv(resolution);
